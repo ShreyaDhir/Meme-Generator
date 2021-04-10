@@ -1,2 +1,2 @@
-# React-Meme-Generator
+# Meme-Generator
 React Meme Generator Project
