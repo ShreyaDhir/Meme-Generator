@@ -13,5 +13,5 @@ Run Webpack in watch-mode to continually compile the JavaScript as you work:
 $ yarn watch # npm run watch
 ```
 
-### Preview
+## Preview
 ![memegerator proto](https://github.com/ShreyaDhir/Meme-Generator/blob/main/memegen.png?raw=true)
