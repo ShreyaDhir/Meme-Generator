@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 13);
+/******/ 	return __webpack_require__(__webpack_require__.s = 16);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -261,6 +261,21 @@ process.umask = function() { return 0; };
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(27);
+} else {
+  module.exports = __webpack_require__(26);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 
 
 /**
@@ -299,7 +314,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 module.exports = emptyFunction;
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -323,7 +338,7 @@ module.exports = emptyObject;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -383,7 +398,7 @@ module.exports = invariant;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -480,21 +495,6 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(24);
-} else {
-  module.exports = __webpack_require__(23);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
 /* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -549,7 +549,7 @@ module.exports = ExecutionEnvironment;
  * 
  */
 
-var isTextNode = __webpack_require__(19);
+var isTextNode = __webpack_require__(22);
 
 /*eslint-disable no-bitwise */
 
@@ -704,7 +704,7 @@ module.exports = shallowEqual;
 
 
 
-var emptyFunction = __webpack_require__(1);
+var emptyFunction = __webpack_require__(2);
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -775,7 +775,7 @@ module.exports = warning;
 var printWarning = function() {};
 
 if (process.env.NODE_ENV !== 'production') {
-  var ReactPropTypesSecret = __webpack_require__(20);
+  var ReactPropTypesSecret = __webpack_require__(23);
   var loggedTypeFailures = {};
   var has = Function.call.bind(Object.prototype.hasOwnProperty);
 
@@ -873,6 +873,45 @@ module.exports = checkPropTypes;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _MemeGenerator = __webpack_require__(15);
+
+var _MemeGenerator2 = _interopRequireDefault(_MemeGenerator);
+
+var _Header = __webpack_require__(14);
+
+var _Header2 = _interopRequireDefault(_Header);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var App = function App() {
+    return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(_Header2.default, null),
+        _react2.default.createElement(_MemeGenerator2.default, null)
+    );
+}; /**
+    * Create the boilerplate to get React to render something on the screen
+    * Render an <App /> component, which you'll need to create separately
+    */
+
+exports.default = App;
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 function checkDCE() {
@@ -907,33 +946,199 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(22);
+  module.exports = __webpack_require__(25);
 } else {
-  module.exports = __webpack_require__(21);
+  module.exports = __webpack_require__(24);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _react = __webpack_require__(5);
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(12);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Header() {
+    return _react2.default.createElement(
+        "header",
+        null,
+        _react2.default.createElement("img", {
+            src: "http://www.pngall.com/wp-content/uploads/2016/05/Trollface.png",
+            alt: "Problem?"
+        }),
+        _react2.default.createElement(
+            "p",
+            null,
+            "Meme Generator"
+        )
+    );
+}
+
+exports.default = Header;
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MemeGenerator = function (_Component) {
+    _inherits(MemeGenerator, _Component);
+
+    function MemeGenerator() {
+        _classCallCheck(this, MemeGenerator);
+
+        var _this = _possibleConstructorReturn(this, (MemeGenerator.__proto__ || Object.getPrototypeOf(MemeGenerator)).call(this));
+
+        _this.state = {
+            topText: "",
+            bottomText: "",
+            randomImg: "http://i.imgflip.com/1bij.jpg",
+            allMemeImgs: []
+        };
+        _this.handleChange = _this.handleChange.bind(_this);
+        _this.handleSubmit = _this.handleSubmit.bind(_this);
+        return _this;
+    }
+
+    _createClass(MemeGenerator, [{
+        key: "componentDidMount",
+        value: function componentDidMount() {
+            var _this2 = this;
+
+            fetch("https://api.imgflip.com/get_memes").then(function (response) {
+                return response.json();
+            }).then(function (response) {
+                var memes = response.data.memes;
+
+                _this2.setState({ allMemeImgs: memes });
+            });
+        }
+    }, {
+        key: "handleChange",
+        value: function handleChange(event) {
+            var _event$target = event.target,
+                name = _event$target.name,
+                value = _event$target.value;
+
+            this.setState(_defineProperty({}, name, value));
+        }
+    }, {
+        key: "handleSubmit",
+        value: function handleSubmit(event) {
+            event.preventDefault();
+            var randNum = Math.floor(Math.random() * this.state.allMemeImgs.length);
+            var randMemeImg = this.state.allMemeImgs[randNum].url;
+            this.setState({ randomImg: randMemeImg });
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "div",
+                null,
+                _react2.default.createElement(
+                    "form",
+                    { className: "meme-form", onSubmit: this.handleSubmit },
+                    _react2.default.createElement("input", {
+                        type: "text",
+                        name: "topText",
+                        placeholder: "Top Text",
+                        value: this.state.topText,
+                        onChange: this.handleChange
+                    }),
+                    _react2.default.createElement("input", {
+                        type: "text",
+                        name: "bottomText",
+                        placeholder: "Bottom Text",
+                        value: this.state.bottomText,
+                        onChange: this.handleChange
+                    }),
+                    _react2.default.createElement(
+                        "button",
+                        null,
+                        "Gen"
+                    )
+                ),
+                _react2.default.createElement(
+                    "div",
+                    { className: "meme" },
+                    _react2.default.createElement("img", { src: this.state.randomImg, alt: "" }),
+                    _react2.default.createElement(
+                        "h2",
+                        { className: "top" },
+                        this.state.topText
+                    ),
+                    _react2.default.createElement(
+                        "h2",
+                        { className: "bottom" },
+                        this.state.bottomText
+                    )
+                )
+            );
+        }
+    }]);
+
+    return MemeGenerator;
+}(_react.Component);
+
+exports.default = MemeGenerator;
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _react = __webpack_require__(1);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(13);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _App = __webpack_require__(25);
+var _App = __webpack_require__(12);
 
 var _App2 = _interopRequireDefault(_App);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById("root"));
 
 /**
  * Create 2 new components - Header and MemeGenerator
@@ -942,10 +1147,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * Each should be in their own file of the same name
  **/
 
-_reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById("root"));
-
 /***/ }),
-/* 14 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -980,7 +1183,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 15 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -995,7 +1198,7 @@ module.exports = camelize;
 
 
 
-var camelize = __webpack_require__(14);
+var camelize = __webpack_require__(17);
 
 var msPattern = /^-ms-/;
 
@@ -1023,7 +1226,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 16 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1059,7 +1262,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 17 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1074,7 +1277,7 @@ module.exports = hyphenate;
 
 
 
-var hyphenate = __webpack_require__(16);
+var hyphenate = __webpack_require__(19);
 
 var msPattern = /^ms-/;
 
@@ -1101,7 +1304,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 18 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1129,7 +1332,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 19 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1144,7 +1347,7 @@ module.exports = isNode;
  * @typechecks
  */
 
-var isNode = __webpack_require__(18);
+var isNode = __webpack_require__(21);
 
 /**
  * @param {*} object The object to check.
@@ -1157,7 +1360,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 20 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1176,7 +1379,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 21 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1197,19 +1400,19 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var invariant = __webpack_require__(3);
-var React = __webpack_require__(5);
+var invariant = __webpack_require__(4);
+var React = __webpack_require__(1);
 var warning = __webpack_require__(10);
 var ExecutionEnvironment = __webpack_require__(6);
-var _assign = __webpack_require__(4);
-var emptyFunction = __webpack_require__(1);
+var _assign = __webpack_require__(5);
+var emptyFunction = __webpack_require__(2);
 var checkPropTypes = __webpack_require__(11);
 var getActiveElement = __webpack_require__(8);
 var shallowEqual = __webpack_require__(9);
 var containsNode = __webpack_require__(7);
-var emptyObject = __webpack_require__(2);
-var hyphenateStyleName = __webpack_require__(17);
-var camelizeStyleName = __webpack_require__(15);
+var emptyObject = __webpack_require__(3);
+var hyphenateStyleName = __webpack_require__(20);
+var camelizeStyleName = __webpack_require__(18);
 
 // Relying on the `invariant()` implementation lets us
 // have preserve the format and params in the www builds.
@@ -18490,7 +18693,7 @@ module.exports = reactDom;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 22 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18506,7 +18709,7 @@ module.exports = reactDom;
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(3),ca=__webpack_require__(5),m=__webpack_require__(6),p=__webpack_require__(4),v=__webpack_require__(1),da=__webpack_require__(8),ea=__webpack_require__(9),fa=__webpack_require__(7),ha=__webpack_require__(2);
+var aa=__webpack_require__(4),ca=__webpack_require__(1),m=__webpack_require__(6),p=__webpack_require__(5),v=__webpack_require__(2),da=__webpack_require__(8),ea=__webpack_require__(9),fa=__webpack_require__(7),ha=__webpack_require__(3);
 function A(a){for(var b=arguments.length-1,c="https://reactjs.org/docs/error-decoder.html?invariant="+a,d=0;d<b;d++)c+="&args[]="+encodeURIComponent(arguments[d+1]);aa(!1,"Minified React error #"+a+"; visit %s for the full message or use the non-minified dev environment for full errors and additional helpful warnings. ",c)}ca?void 0:A("227");
 function ia(a,b,c,d,e,f,g,h,k){this._hasCaughtError=!1;this._caughtError=null;var n=Array.prototype.slice.call(arguments,3);try{b.apply(c,n)}catch(r){this._caughtError=r,this._hasCaughtError=!0}}
 var B={_caughtError:null,_hasCaughtError:!1,_rethrowError:null,_hasRethrowError:!1,invokeGuardedCallback:function(a,b,c,d,e,f,g,h,k){ia.apply(B,arguments)},invokeGuardedCallbackAndCatchFirstError:function(a,b,c,d,e,f,g,h,k){B.invokeGuardedCallback.apply(this,arguments);if(B.hasCaughtError()){var n=B.clearCaughtError();B._hasRethrowError||(B._hasRethrowError=!0,B._rethrowError=n)}},rethrowCaughtError:function(){return ka.apply(B,arguments)},hasCaughtError:function(){return B._hasCaughtError},clearCaughtError:function(){if(B._hasCaughtError){var a=
@@ -18735,7 +18938,7 @@ var vi={default:qi},wi=vi&&qi||vi;module.exports=wi.default?wi.default:wi;
 
 
 /***/ }),
-/* 23 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18756,11 +18959,11 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var _assign = __webpack_require__(4);
-var invariant = __webpack_require__(3);
-var emptyObject = __webpack_require__(2);
+var _assign = __webpack_require__(5);
+var invariant = __webpack_require__(4);
+var emptyObject = __webpack_require__(3);
 var warning = __webpack_require__(10);
-var emptyFunction = __webpack_require__(1);
+var emptyFunction = __webpack_require__(2);
 var checkPropTypes = __webpack_require__(11);
 
 // TODO: this is special because it gets imported during build.
@@ -20217,7 +20420,7 @@ module.exports = react;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 24 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20230,7 +20433,7 @@ module.exports = react;
  * LICENSE file in the root directory of this source tree.
  */
 
-var k=__webpack_require__(4),n=__webpack_require__(3),p=__webpack_require__(2),q=__webpack_require__(1),r="function"===typeof Symbol&&Symbol.for,t=r?Symbol.for("react.element"):60103,u=r?Symbol.for("react.portal"):60106,v=r?Symbol.for("react.fragment"):60107,w=r?Symbol.for("react.strict_mode"):60108,x=r?Symbol.for("react.profiler"):60114,y=r?Symbol.for("react.provider"):60109,z=r?Symbol.for("react.context"):60110,A=r?Symbol.for("react.async_mode"):60111,B=
+var k=__webpack_require__(5),n=__webpack_require__(4),p=__webpack_require__(3),q=__webpack_require__(2),r="function"===typeof Symbol&&Symbol.for,t=r?Symbol.for("react.element"):60103,u=r?Symbol.for("react.portal"):60106,v=r?Symbol.for("react.fragment"):60107,w=r?Symbol.for("react.strict_mode"):60108,x=r?Symbol.for("react.profiler"):60114,y=r?Symbol.for("react.provider"):60109,z=r?Symbol.for("react.context"):60110,A=r?Symbol.for("react.async_mode"):60111,B=
 r?Symbol.for("react.forward_ref"):60112;r&&Symbol.for("react.timeout");var C="function"===typeof Symbol&&Symbol.iterator;function D(a){for(var b=arguments.length-1,e="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=0;c<b;c++)e+="&args[]="+encodeURIComponent(arguments[c+1]);n(!1,"Minified React error #"+a+"; visit %s for the full message or use the non-minified dev environment for full errors and additional helpful warnings. ",e)}
 var E={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}};function F(a,b,e){this.props=a;this.context=b;this.refs=p;this.updater=e||E}F.prototype.isReactComponent={};F.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?D("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};F.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};function G(){}
 G.prototype=F.prototype;function H(a,b,e){this.props=a;this.context=b;this.refs=p;this.updater=e||E}var I=H.prototype=new G;I.constructor=H;k(I,F.prototype);I.isPureReactComponent=!0;var J={current:null},K=Object.prototype.hasOwnProperty,L={key:!0,ref:!0,__self:!0,__source:!0};
@@ -20244,148 +20447,6 @@ _calculateChangedBits:b,_defaultValue:a,_currentValue:a,_currentValue2:a,_change
 b.key&&(g=""+b.key);var l=void 0;a.type&&a.type.defaultProps&&(l=a.type.defaultProps);for(c in b)K.call(b,c)&&!L.hasOwnProperty(c)&&(d[c]=void 0===b[c]&&void 0!==l?l[c]:b[c])}c=arguments.length-2;if(1===c)d.children=e;else if(1<c){l=Array(c);for(var m=0;m<c;m++)l[m]=arguments[m+2];d.children=l}return{$$typeof:t,type:a.type,key:g,ref:h,props:d,_owner:f}},createFactory:function(a){var b=M.bind(null,a);b.type=a;return b},isValidElement:N,version:"16.4.0",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurrentOwner:J,
 assign:k}},Y={default:X},Z=Y&&X||Y;module.exports=Z.default?Z.default:Z;
 
-
-/***/ }),
-/* 25 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(5);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _MemeGenerator = __webpack_require__(26);
-
-var _MemeGenerator2 = _interopRequireDefault(_MemeGenerator);
-
-var _Header = __webpack_require__(27);
-
-var _Header2 = _interopRequireDefault(_Header);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var App = function App() {
-    return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(_Header2.default, null),
-        _react2.default.createElement(_MemeGenerator2.default, null)
-    );
-}; /**
-    * Create the boilerplate to get React to render something on the screen
-    * Render an <App /> component, which you'll need to create separately
-    */
-
-exports.default = App;
-
-/***/ }),
-/* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(5);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-/**
- * Initialize state to save the following data:
- *      top text
- *      bottom text
- *      random image (intialize with "http://i.imgflip.com/1bij.jpg")
- */
-
-var MemeGenerator = function (_Component) {
-    _inherits(MemeGenerator, _Component);
-
-    function MemeGenerator(props) {
-        _classCallCheck(this, MemeGenerator);
-
-        var _this = _possibleConstructorReturn(this, (MemeGenerator.__proto__ || Object.getPrototypeOf(MemeGenerator)).call(this));
-
-        _this.state = {};
-        return _this;
-    }
-
-    _createClass(MemeGenerator, [{
-        key: "render",
-        value: function render() {
-            return _react2.default.createElement(
-                "header",
-                null,
-                _react2.default.createElement("img", {
-                    src: "http://www.pngall.com/wp-content/uploads/2016/05/Trollface.png",
-                    alt: "Problem?"
-                }),
-                _react2.default.createElement(
-                    "p",
-                    null,
-                    "Meme Generator"
-                )
-            );
-        }
-    }]);
-
-    return MemeGenerator;
-}(_react.Component);
-
-exports.default = MemeGenerator;
-
-/***/ }),
-/* 27 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(5);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function header() {
-    return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-            'h1',
-            null,
-            _react2.default.createElement(
-                'h1',
-                null,
-                'Header'
-            )
-        )
-    );
-}
-
-exports.default = Header;
 
 /***/ })
 /******/ ]);

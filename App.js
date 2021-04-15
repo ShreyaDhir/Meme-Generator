@@ -4,8 +4,9 @@
  */
 
 import React from 'react'
-import MemeGenerator from './MemeGenerator'
-import Header from './Header'
+import MemeGenerator from './components/MemeGenerator'
+import Header from './components/Header'
+
 const App = () => {
     return (
         <div>

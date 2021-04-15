@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+
 /**
  * Create 2 new components - Header and MemeGenerator
  * Header will only display things
@@ -8,4 +8,6 @@ import App from './App';
  * Each should be in their own file of the same name
  **/
 
-ReactDOM.render(<App />, document.getElementById("root"))
+import App from './App';
+
+ReactDOM.render(<App />, document.getElementById("root"));
